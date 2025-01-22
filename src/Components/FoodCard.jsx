@@ -37,8 +37,7 @@ const FoodCard = ({ item }) => {
                         position: "middle",
                         icon: "success",
                         title: `${name} Added to your cart`,
-                        showConfirmButton: false,
-                        timer: 1500
+                        showConfirmButton: true,
                     });
                     // refetch cart to update the cart items count
                     refetch();

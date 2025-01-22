@@ -92,7 +92,7 @@ const Dashboard = () => {
                 </li>
 
                 <li>
-                    <NavLink to="/dashboard/reservation">
+                    <NavLink to="/dashboard/payment-history">
                     <GiWallet></GiWallet>
                         Payment History
                     </NavLink>

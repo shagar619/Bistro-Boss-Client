@@ -4,6 +4,7 @@ import useCart from "../hooks/useCart";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import useAxios from "../hooks/useAxios";
 import SectionTitle from "../Components/SectionTitle";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -59,7 +60,13 @@ const Cart = () => {
 
             <h1 className="text-[#151515] text-[32px] font-bold uppercase">Total Price : $ {totalPrice}</h1>
 
+        { cart.length ? <Link to="/dashboard/payment">
             <button className="btn bg-[#D1A054] text-white text-xl font-semibold">Pay</button>
+        </Link> 
+        :
+        <button disabled className="btn bg-[#D1A054] text-white text-xl font-semibold">Pay</button>
+        }
+
     </div>
 
     <div className="overflow-x-auto">
@@ -115,6 +122,8 @@ const Cart = () => {
     </tbody>
     </table>
     </div>
+
+    
     </div>
     </div>
     );
