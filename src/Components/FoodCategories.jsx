@@ -22,7 +22,9 @@ const FoodCategories = () => {
         subHeading={"---From 11:00am to 10:00pm---"}
         heading={"ORDER ONLINE"}
         >
-        </SectionTitle>    
+        </SectionTitle>
+
+<div className='w-10/12 mx-auto'>
 
 <Swiper
         slidesPerView={5}
@@ -75,10 +77,10 @@ const FoodCategories = () => {
             <h3 className='text-4xl uppercase text-white text-center -mt-16'>Salads</h3>
         </SwiperSlide>
 
-        </Swiper>
-            
-        </div>
-    );
+</Swiper>
+</div>
+</div>
+);
 };
 
 export default FoodCategories;

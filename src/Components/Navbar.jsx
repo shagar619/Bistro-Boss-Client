@@ -5,13 +5,14 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaCartShopping } from "react-icons/fa6";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 
 
 const Navbar = () => {
 
     const { user,logOutUser } = useContext(AuthContext);
-
+    const [ isAdmin ] = useAdmin();
     const [ cart ] = useCart();
 
     const handleLogOut = () => {
@@ -30,9 +31,28 @@ const Navbar = () => {
 
     <NavLink to="/">HOME</NavLink>
     <NavLink to="">CONTACT US</NavLink>
-    <NavLink to="dashboard">DASHBOARD</NavLink>
     <NavLink to="/menu">OUR MENU</NavLink>
     <NavLink to="/order/salad">ORDER FOOD</NavLink>
+
+    {
+            // user ? 'true': 'false'
+            // user ? condition ? 'double true' : 'one true' : 'false' 
+        }
+        {
+            user && isAdmin && <li><Link to="/dashboard/adminHome">Dashboard</Link></li>
+        }
+        {
+            user && !isAdmin && <li><Link to="/dashboard/userHome">Dashboard</Link></li>
+        }
+
+<Link to="/dashboard/cart">
+
+<button className="btn">
+<FaCartShopping className="text-green-600 h-6 w-6"></FaCartShopping>
+    <div className="badge badge-secondary">{cart.length}</div>
+</button>
+
+</Link>
     
     </>
 
@@ -63,21 +83,13 @@ const Navbar = () => {
     <h3 className="text-3xl font-bold">BISTRO BOSS <br /> RESTAURANT</h3>
 </div>
 <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 space-x-8 text-lg font-bold">
+    <ul className="menu menu-horizontal flex items-center px-1 space-x-8 text-lg font-bold">
         {links}
     </ul>
 </div>
 
 <div className="navbar-end space-x-4">
 
-    <Link to="/dashboard/cart">
-
-    <button className="btn">
-    <FaCartShopping className="text-green-600 h-6 w-6"></FaCartShopping>
-        <div className="badge badge-secondary">{cart.length}</div>
-    </button>
-
-    </Link>
 {
     user ? 
     <div className="flex items-center gap-6 ">
