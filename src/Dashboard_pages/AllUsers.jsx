@@ -22,7 +22,6 @@ const AllUsers = () => {
     const handleMakeAdmin = (user) => {
         axiosSecure.patch(`/users/admin/${user._id}`)
         .then(res => {
-            console.log(res.data);
             if(res.data.modifiedCount > 0){
                 refetch();
                 Swal.fire({
@@ -77,7 +76,7 @@ const AllUsers = () => {
             heading={"MANAGE ALL USERS"}>
             </SectionTitle>
 
-        <div className="bg-white p-12 mx-36">
+<div className="bg-white p-12 mx-36">
 
             <h2 className="text-[#151515] text-[32px] font-bold mb-8">Total Users : {users.length}</h2>
 

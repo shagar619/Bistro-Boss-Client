@@ -17,6 +17,7 @@ import Payment from "../Payment/Payment";
 import PaymentHistory from "../Dashboard_pages/PaymentHistory";
 import UserHome from "../Dashboard_pages/UserHome";
 import AdminHome from "../Dashboard_pages/AdminHome";
+import ManageBookings from "../Dashboard_pages/ManageBookings";
 
 const router = createBrowserRouter([
     {
@@ -108,6 +109,11 @@ const router = createBrowserRouter([
                 element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
             },
+
+            {
+                path: 'manageBookings',
+                element: <AdminRoute><ManageBookings></ManageBookings></AdminRoute>
+            }
 
         ]
     }

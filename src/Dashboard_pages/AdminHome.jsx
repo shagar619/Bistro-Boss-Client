@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
-import { FaBook, FaDollarSign, FaUsers } from "react-icons/fa";
-import { RiAlignItemLeftFill } from "react-icons/ri";
+import { FaUsers } from "react-icons/fa";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend } from 'recharts';
+import { IoWalletSharp } from "react-icons/io5";
+import { IoMdMenu } from "react-icons/io";
+import { MdMenuBook } from "react-icons/md";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -69,7 +71,7 @@ const AdminHome = () => {
 
 
     return (
-        <div className="pl-12">
+        <div className="px-12 py-24 bg-slate-100">
             
             <h2 className="text-[#151515] text-4xl font-semibold my-12">
                 <span>Hi, Welcome </span>
@@ -79,48 +81,64 @@ const AdminHome = () => {
             </h2>
 
 {/* stat */}
-<div className="stats shadow font-sans">
-<div className="stat">
-    <div className="stat-figure text-secondary">
-        <FaDollarSign className="text-4xl"></FaDollarSign>
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-serif">
+
+<div 
+style={{ 'background': 'linear-gradient(90.00deg, rgb(187, 52, 245),rgb(252, 219, 255) 100%)'}}
+className="flex items-center gap-8 py-9 px-12 text-white rounded-lg transition hover:scale-105 shadow-xl">
+    <div>
+        <div><IoWalletSharp className="text-6xl"></IoWalletSharp></div>
     </div>
-    <div className="stat-title">Revenue</div>
-    <div className="stat-value">{stats.revenue}</div>
-    <div className="stat-desc">Jan 1st - Feb 1st</div>
+    <div>
+        <h3 className="text-[40px] font-extrabold">{stats.revenue}</h3>
+        <h3 className="text-2xl font-medium">Revenue</h3>
+    </div>
 </div>
 
-<div className="stat">
-    <div className="stat-figure text-secondary">
-        <FaUsers className="text-4xl"></FaUsers>
+<div 
+style={{'background': 'linear-gradient(90.00deg, rgb(211, 162, 86),rgb(253, 232, 192) 100%)'}}
+className="flex items-center gap-8 py-9 px-12 text-white rounded-lg transition hover:scale-105 shadow-xl">
+    <div>
+        <div><FaUsers className="text-6xl"></FaUsers></div>
     </div>
-    <div className="stat-title">Users</div>
-    <div className="stat-value">{stats.users}</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
+    <div>
+        <h3 className="text-[40px] font-extrabold">{stats.users}</h3>
+        <h3 className="text-2xl font-medium">Users</h3>
+    </div>
 </div>
 
-<div className="stat">
-    <div className="stat-figure text-secondary">
-    <RiAlignItemLeftFill className="text-4xl"></RiAlignItemLeftFill>
+<div 
+style={{'background': 'linear-gradient(90.00deg, rgb(254, 72, 128),rgb(254, 205, 233) 100%)'}}
+className="flex items-center gap-8 py-9 px-12 text-white rounded-lg transition hover:scale-105 shadow-xl">
+    <div>
+        <div><IoMdMenu className="text-6xl"></IoMdMenu></div>
     </div>
-    <div className="stat-title">Menu Items</div>
-    <div className="stat-value">{stats.menuItems}</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
+    <div>
+        <h3 className="text-[40px] font-extrabold">{stats.menuItems}</h3>
+        <h3 className="text-2xl font-medium">Menu</h3>
+    </div>
 </div>
 
-<div className="stat">
-    <div className="stat-figure text-secondary">
-        <FaBook className="text-4xl"></FaBook>
+<div 
+style={{ 'background': 'linear-gradient(90.00deg, rgb(106, 174, 255),rgb(182, 247, 255) 100%)'}}
+className="flex items-center gap-8 py-9 px-12 text-white rounded-lg transition hover:scale-105 shadow-xl">
+    <div>
+        <div><MdMenuBook className="text-6xl"></MdMenuBook></div>
     </div>
-    <div className="stat-title">Orders</div>
-    <div className="stat-value">{stats.orders}</div>
-    <div className="stat-desc">↘︎ 90 (14%)</div>
+    <div>
+        <h3 className="text-[40px] font-extrabold">{stats.orders}</h3>
+        <h3 className="text-2xl font-medium">Orders</h3>
+    </div>
 </div>
+
 </div>
+
 
 
 {/* Charts */}
 
-<div className="flex justify-center items-center">
+<div className="flex flex-col md:flex-row md:justify-center md:items-center bg-white py-6 mt-8">
 
     {/* 1st Chart */}
     <div className="w-1/2">
