@@ -2,16 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import SectionTitle from "../Components/SectionTitle";
 import useAxios from "../hooks/useAxios";
 import { IoMdCheckmark } from "react-icons/io";
-import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const ManageBookings = () => {
 
-    const [ confirm, setConfirm ] = useState(false);
-
     const axiosSecure = useAxios();
 
-    const { data: payments = []} = useQuery({
+    const { data: payments = [], refetch } = useQuery({
         queryKey: ['payments'],
         queryFn: async() => {
             const res = await axiosSecure.get('payments');
@@ -21,8 +19,32 @@ const ManageBookings = () => {
 
 
     const handleConfirmPayment = (id) => {
-        console.log(id);
-        setConfirm(true);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to accept this payment!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Confirm it!"
+        }).then(result => {
+            if(result.isConfirmed){
+                axiosSecure.patch(`/payments/${id}`)
+                .then(res => {
+                    if(res.data.modifiedCount > 0){
+                        refetch();
+                        Swal.fire({
+                            position: "middle",
+                            icon: "success",
+                            title: `This Payment is Confirm Now!`,
+                            showConfirmButton: true,
+                        });
+                    }
+                })
+            }
+        })
+
     }
 
     return (
@@ -70,19 +92,19 @@ const ManageBookings = () => {
 
 
                         {
-                            confirm ? 
+                            user.status === 'pending' ? 
                             <>
                             <td>
                             <button 
-                            className="btn bg-[#287855] h-12 w-12 rounded-full"><IoMdCheckmark className="text-white"></IoMdCheckmark></button>
+                            onClick={() => handleConfirmPayment(user._id)}
+                            className="btn bg-[#80E2B7] h-12 w-12 rounded-full"><IoMdCheckmark className="text-white"></IoMdCheckmark></button>
                             </td>
                             </>
                             :
                             <>
                             <td>
                             <button 
-                            onClick={() => handleConfirmPayment(user._id)}
-                            className="btn bg-[#80E2B7] h-12 w-12 rounded-full"><IoMdCheckmark className="text-white"></IoMdCheckmark></button>
+                            className="btn bg-[#287855] h-12 w-12 rounded-full"><IoMdCheckmark className="text-white"></IoMdCheckmark></button>
                             </td>
                             </>
                         }
