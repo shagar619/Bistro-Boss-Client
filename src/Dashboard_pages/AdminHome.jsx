@@ -6,6 +6,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend
 import { IoWalletSharp } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 import { MdMenuBook } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -71,9 +72,14 @@ const AdminHome = () => {
 
 
     return (
-        <div className="px-12 py-24 bg-slate-100">
+
+        <div className="px-12 pt-12 pb-36 bg-slate-100">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | ADMIN HOME</title>
+            </Helmet>
             
-            <h2 className="text-[#151515] text-4xl font-semibold my-12">
+            <h2 className="text-[#151515] text-4xl font-semibold mb-12">
                 <span>Hi, Welcome </span>
                 {
                     user?.displayName ? user.displayName : "Back"

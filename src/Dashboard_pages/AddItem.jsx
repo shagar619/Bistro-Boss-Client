@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import useAxios from "../hooks/useAxios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -55,6 +56,10 @@ const AddItem = () => {
 
     return (
         <div className="pb-56">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | ADD ITEM</title>
+            </Helmet>
 
             <SectionTitle
             subHeading={"---What's new?---"}

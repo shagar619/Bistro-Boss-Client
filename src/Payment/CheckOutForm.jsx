@@ -5,6 +5,7 @@ import useCart from "../hooks/useCart";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useReservation from "../hooks/useReservation";
 
 const CheckOutForm = () => {
 
@@ -19,6 +20,9 @@ const CheckOutForm = () => {
     const [cart, refetch] = useCart();
     const navigate = useNavigate();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const [reservation] = useReservation();
+
+    console.log(reservation);
 
 
     useEffect(() => {
@@ -78,7 +82,6 @@ const CheckOutForm = () => {
         if(confirmError) {
             console.log('confirm error');
         } else {
-            console.log('payment intent', paymentIntent);
             if(paymentIntent.status === 'succeeded') {
                 console.log('transaction id', paymentIntent.id);
                 setTransactionId(paymentIntent.id);
@@ -87,11 +90,15 @@ const CheckOutForm = () => {
                 // now save the payment in the database
                 const payment = {
                     email: user.email,
+                    phoneNumber: reservation.phoneNumber,
                     price: totalPrice,
                     transactionId: paymentIntent.id,
                     date: new Date(),  // utc date convert. use moment js to
                     cartIds: cart.map(item => item._id),
                     menuItemId: cart.map(item => item.menuId),
+                    orderDate: reservation.date,
+                    orderTime: reservation.time,
+                    guest: reservation.guest,
                     status: 'pending'
                 }
 
@@ -118,7 +125,7 @@ const CheckOutForm = () => {
 
             <form onSubmit={handleSubmit}>
 
-                <CardElement>
+                <CardElement className="border p-4 my-4">
                 options={{
                     style: {
                         base: {

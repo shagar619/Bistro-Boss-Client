@@ -5,6 +5,7 @@ import { FaRegEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxios from "../hooks/useAxios";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const ManageItems = () => {
@@ -40,6 +41,10 @@ const ManageItems = () => {
 
     return (
         <div className="bg-slate-100 pb-56">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | MANAGE ITEMS</title>
+            </Helmet>
 
         <SectionTitle 
         subHeading={"---Hurry Up!---"}

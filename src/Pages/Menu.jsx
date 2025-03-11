@@ -25,7 +25,7 @@ const Menu = () => {
         <div>
 
             <Helmet>
-                <title>Bistro Boss | Menu</title>
+                <title>BISTRO BOSS | MENU</title>
             </Helmet>
 
             <Cover 

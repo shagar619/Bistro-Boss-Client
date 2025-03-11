@@ -61,7 +61,7 @@ const SignUp = () => {
         style={{backgroundImage: "url(https://i.ibb.co.com/3S5NpzN/authentication.png)"}}>
 
             <Helmet>
-                <title>Bistro Boss | Sign Up</title>
+                <title>BISTRO BOSS | SIGN UP</title>
             </Helmet>
 
             <div 

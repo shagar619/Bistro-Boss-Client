@@ -9,6 +9,8 @@ import { MdShoppingBag } from "react-icons/md";
 import { RiMailOpenFill, RiPlayListAddLine } from "react-icons/ri";
 import { TfiMenuAlt } from "react-icons/tfi";
 import useAdmin from "../hooks/useAdmin";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 
 const Dashboard = () => {
@@ -19,7 +21,9 @@ const Dashboard = () => {
     const [ isAdmin ] = useAdmin();
 
     return (
-        <div className="flex">
+        <div>
+
+        <div className="flex pb-1">
 
             {/* dashboard side bar */}
 
@@ -27,7 +31,7 @@ const Dashboard = () => {
 
             <h2 className="text-center text-2xl font-bold text-[#151515] my-12">Bistro Boss <br /> <span className="text-[#151515] text-lg font-bold">Restaurant</span></h2>
 
-            <ul className="menu p-6 text-base font-medium">
+            <ul className="menu p-6 text-lg font-semibold text-[#151515] uppercase">
 
                 {
                     isAdmin ? 
@@ -85,9 +89,16 @@ const Dashboard = () => {
                 </li>
 
                 <li>
-                    <NavLink to="/dashboard/reservation">
-                    <FaCalendarAlt></FaCalendarAlt>
-                        Reservation
+                    <NavLink to="/dashboard/cart">
+                        <FaShoppingCart></FaShoppingCart>
+                        My Cart ({cart.length})
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/dashboard/myBooking">
+                    <TbBrandBooking></TbBrandBooking>
+                        My Bookings
                     </NavLink>
                 </li>
 
@@ -99,23 +110,9 @@ const Dashboard = () => {
                 </li>
 
                 <li>
-                    <NavLink to="/dashboard/cart">
-                        <FaShoppingCart></FaShoppingCart>
-                        My Cart ({cart.length})
-                    </NavLink>
-                </li>
-
-                <li>
                     <NavLink to="/dashboard/review">
                         <FaAd></FaAd>
                         Add a Review
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="/dashboard/bookings">
-                    <TbBrandBooking></TbBrandBooking>
-                        My Bookings
                     </NavLink>
                 </li>
 
@@ -168,6 +165,10 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
             
+        </div>
+
+        <Footer></Footer>
+
         </div>
     );
 };

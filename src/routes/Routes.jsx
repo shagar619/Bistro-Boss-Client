@@ -18,12 +18,17 @@ import PaymentHistory from "../Dashboard_pages/PaymentHistory";
 import UserHome from "../Dashboard_pages/UserHome";
 import AdminHome from "../Dashboard_pages/AdminHome";
 import ManageBookings from "../Dashboard_pages/ManageBookings";
+import UpdateUser from "../Dashboard_pages/UpdateUser";
+import Reservation from "../Dashboard_pages/Reservation";
+import MyBooking from "../Dashboard_pages/MyBooking";
+import AddReview from "../Dashboard_pages/AddReview";
+import ErrorPage from "../404page/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        errorElement: <h2>ERROR PAGE</h2>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -78,6 +83,26 @@ const router = createBrowserRouter([
                 element: <PaymentHistory></PaymentHistory>
             },
 
+            {
+                path: "updateUser",
+                element: <UpdateUser></UpdateUser>
+            },
+
+            {
+                path: "reservation",
+                element: <Reservation></Reservation>
+            },
+
+            {
+                path: "myBooking",
+                element: <MyBooking></MyBooking>
+            },
+
+            {
+                path: "review",
+                element: <AddReview></AddReview>
+            },
+
 
 
             
@@ -107,7 +132,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateItem/:id',
                 element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+                loader: ({params}) => fetch(`https://bistro-boss-server-ruddy-pi.vercel.app/menu/${params.id}`)
             },
 
             {

@@ -3,6 +3,7 @@ import SectionTitle from "../Components/SectionTitle";
 import useAxios from "../hooks/useAxios";
 import { IoMdCheckmark } from "react-icons/io";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const ManageBookings = () => {
@@ -49,6 +50,10 @@ const ManageBookings = () => {
 
     return (
         <div className="bg-slate-100 pb-56">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | MANAGE BOOKINGS</title>
+            </Helmet>
 
             <SectionTitle
             subHeading={"---At a Glance!---"}

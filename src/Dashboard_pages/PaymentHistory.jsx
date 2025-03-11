@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import SectionTitle from "../Components/SectionTitle";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 
 const PaymentHistory = () => {
@@ -19,6 +20,10 @@ const PaymentHistory = () => {
 
     return (
         <div className="bg-slate-100 pb-56">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | PAYMENT HISTORY</title>
+            </Helmet>
 
             <SectionTitle 
             subHeading={"---At a Glance!---"}
@@ -74,8 +79,8 @@ const PaymentHistory = () => {
                 </table>
                 </div>
 
-            </div>
-            
+        </div>
+        
         </div>
     );
 };

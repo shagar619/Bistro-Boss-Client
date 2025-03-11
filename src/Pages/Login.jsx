@@ -81,7 +81,7 @@ const Login = () => {
         style={{backgroundImage: "url(https://i.ibb.co.com/3S5NpzN/authentication.png)"}}>
 
             <Helmet>
-                <title>Bistro Boss | Login</title>
+                <title>BISTRO BOSS | LOGIN</title>
             </Helmet>
 
             <div 

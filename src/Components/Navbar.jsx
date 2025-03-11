@@ -29,20 +29,33 @@ const Navbar = () => {
 
     const links = <>
 
-    <NavLink to="/">HOME</NavLink>
-    <NavLink to="">CONTACT US</NavLink>
-    <NavLink to="/menu">OUR MENU</NavLink>
-    <NavLink to="/order/salad">ORDER FOOD</NavLink>
+    <NavLink 
+    className={({ isActive }) => `font-bold ${isActive? 'text-warning': 'hover:text-warning transition hover:scale-110'}`}
+    to="/">HOME</NavLink>
+
+    <NavLink 
+    className={({ isActive }) => `font-bold ${isActive? 'text-warning': 'hover:text-warning transition hover:scale-110'}`}
+    to="/contacts">CONTACT US</NavLink>
+
+    <NavLink 
+    className={({ isActive }) => `font-bold ${isActive? 'text-warning': 'hover:text-warning transition hover:scale-110'}`}
+    to="/menu">OUR MENU</NavLink>
+
+    <NavLink 
+    className={({ isActive }) => `font-bold ${isActive? 'text-warning': 'hover:text-warning transition hover:scale-110'}`}
+    to="/order/salad">ORDER FOOD</NavLink>
 
     {
             // user ? 'true': 'false'
             // user ? condition ? 'double true' : 'one true' : 'false' 
         }
         {
-            user && isAdmin && <li><Link to="/dashboard/adminHome">Dashboard</Link></li>
+            user && isAdmin && <li><Link 
+            to="/dashboard/adminHome">Dashboard</Link></li>
         }
         {
-            user && !isAdmin && <li><Link to="/dashboard/userHome">Dashboard</Link></li>
+            user && !isAdmin && <li><Link
+            to="/dashboard/userHome">Dashboard</Link></li>
         }
 
 <Link to="/dashboard/cart">
@@ -80,7 +93,7 @@ const Navbar = () => {
         {links}
     </ul>
     </div>
-    <h3 className="text-3xl font-bold">BISTRO BOSS <br /> RESTAURANT</h3>
+    <h3 className="text-3xl font-bold hover:text-warning transition hover:scale-110">BISTRO BOSS <br /> RESTAURANT</h3>
 </div>
 <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal flex items-center px-1 space-x-8 text-lg font-bold">
@@ -100,7 +113,7 @@ const Navbar = () => {
     </div>
     : 
     <>
-    <Link className="underline hover:text-slate-800 text-xl font-semibold" to="/signup">Register</Link>
+    <Link className="underline text-xl font-semibold hover:text-warning transition hover:scale-110" to="/signup">Register</Link>
     <Link to="/login"><button className="btn text-lg bg-slate-700 text-white border-none">Sign In</button></Link>
     </>
 }

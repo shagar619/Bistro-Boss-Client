@@ -4,6 +4,7 @@ import useAxios from "../hooks/useAxios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const AllUsers = () => {
@@ -70,6 +71,10 @@ const AllUsers = () => {
 
     return (
         <div className="bg-slate-100 pb-56">
+
+            <Helmet>
+                <title>BISTRO BOSS | DASHBOARD | ALL USERS</title>
+            </Helmet>
             
             <SectionTitle 
             subHeading={"---How many??---"}

@@ -5,6 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import useAxios from "../hooks/useAxios";
 import SectionTitle from "../Components/SectionTitle";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Cart = () => {
@@ -45,6 +46,10 @@ const Cart = () => {
     return (
     <div className="bg-slate-100 pb-56">
 
+        <Helmet>
+            <title>BISTRO BOSS | DASHBOARD | CART</title>
+        </Helmet>
+
         <SectionTitle 
         subHeading={"---My Cart---"}
         heading={"WANNA ADD MORE?"}>
@@ -60,11 +65,11 @@ const Cart = () => {
 
             <h1 className="text-[#151515] text-[32px] font-bold uppercase">Total Price : $ {totalPrice}</h1>
 
-        { cart.length ? <Link to="/dashboard/payment">
-            <button className="btn bg-[#D1A054] text-white text-xl font-semibold">Pay</button>
+        { cart.length ? <Link to="/dashboard/reservation">
+            <button className="btn bg-[#D1A054] text-white text-xl font-semibold">Booking</button>
         </Link> 
         :
-        <button disabled className="btn bg-[#D1A054] text-white text-xl font-semibold">Pay</button>
+        <button disabled className="btn bg-[#D1A054] text-white text-xl font-semibold">Booking</button>
         }
 
     </div>

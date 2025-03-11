@@ -12,10 +12,6 @@ import { useParams } from 'react-router-dom';
 
 const OrderFood = () => {
 
-    <Helmet>
-        <title>Bistro Boss | Order Food</title>
-    </Helmet>
-
     const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
 
     const { category } = useParams();
@@ -36,9 +32,9 @@ const OrderFood = () => {
     return (
         <div>
 
-            <Helmet>
-                <title>Bistro Boss | Order Food</title>
-            </Helmet>
+        <Helmet>
+            <title>BISTRO BOSS | ORDER FOOD</title>
+        </Helmet>
 
             <Cover
             img={orderCoverImg}
@@ -47,7 +43,7 @@ const OrderFood = () => {
             </Cover>
 
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
+                <TabList className={"text-3xl font-semibold border rounded flex justify-center gap-16 mt-16 mb-116"}>
                     <Tab>SALAD</Tab>
                     <Tab>PIZZA</Tab>
                     <Tab>SOUPS</Tab>

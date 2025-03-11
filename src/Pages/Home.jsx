@@ -14,7 +14,7 @@ const Home = () => {
         <div>
 
             <Helmet>
-                <title>Bistro Boss | Home</title>
+                <title>BISTRO BOSS | HOME</title>
             </Helmet>
             
             <Banner></Banner>
