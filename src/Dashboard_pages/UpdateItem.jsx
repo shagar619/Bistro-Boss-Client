@@ -73,7 +73,7 @@ const UpdateItem = () => {
         heading={"UPDATE ALL ITEM"}>
         </SectionTitle>
 
-        <div className="bg-[#F3F3F3] p-12 mx-32">
+        <div className="bg-[#F3F3F3] shadow-lg p-12 mx-32">
             
         <form onSubmit={handleSubmit(onSubmit)}>
             
@@ -86,7 +86,7 @@ const UpdateItem = () => {
                     <input 
                         {...register('name', { required: true })}
                         defaultValue={name}
-                        type="text" name="name" placeholder="Enter Recipe Name" className="input input-bordered w-full" />
+                        type="text" name="name" placeholder="Enter Recipe Name" className="input input-bordered w-full rounded-sm border-none" />
                         {errors.name && <span className="text-red-600">Name is required</span>}
                     </label>
             
@@ -100,7 +100,7 @@ const UpdateItem = () => {
                     </div>
                 <select 
                     {...register('category', { required: true })}
-                    defaultValue={category} name="category" required className="select text-base font-normal text-gray-500 select-bordered w-full">
+                    defaultValue={category} name="category" required className="select text-base font-normal text-gray-500 select-bordered w-full rounded-sm border-none">
                     <option disabled>Select a category</option>
                     <option value="salad">Salad</option>
                     <option value="pizza">Pizza</option>
@@ -120,7 +120,7 @@ const UpdateItem = () => {
                     <input 
                     {...register('price', { required: true })}
                     defaultValue={price}
-                    type="number" name="price" placeholder="Enter Price" className="input input-bordered w-full" />
+                    type="number" name="price" placeholder="Enter Price" className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Price is required</span>}
                 </label>
             
@@ -135,19 +135,19 @@ const UpdateItem = () => {
                     <textarea 
                         {...register('recipe', { required: true })}
                         defaultValue={recipe}
-                        className="textarea textarea-bordered h-24" placeholder="Recipe Details"></textarea>
+                        className="textarea textarea-bordered h-24 rounded-sm border-none" placeholder="Recipe Details"></textarea>
                         {errors.name && <span className="text-red-600">Recipe Details is required</span>}
             </label>
             
             <div className="form-control w-full my-6">
                 <input 
                     {...register('image', { required: true })}
-                    type="file" className="file-input w-full max-w-xs" />
+                    type="file" className="file-input w-full max-w-xs rounded-sm" />
                     {errors.name && <span className="text-red-600">Image is required</span>}
             </div>
             
         <div className="text-center">
-            <button className="btn bg-[#D1A054] text-white">
+            <button className="btn bg-[#D1A054] text-lg font-semibold text-white rounded-sm">
                 Update Recipe Details
             </button>
         </div>

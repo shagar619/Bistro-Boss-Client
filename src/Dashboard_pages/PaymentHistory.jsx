@@ -30,7 +30,7 @@ const PaymentHistory = () => {
             heading={"PAYMENT HISTORY"}>
             </SectionTitle>
         
-        <div className="bg-white p-12 mx-36">
+        <div className="bg-white shadow-lg p-12 mx-36">
 
         <h1 className="text-[#151515] text-[32px] font-bold uppercase my-8">Total Payments : {payments.length}</h1>
 

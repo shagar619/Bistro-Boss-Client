@@ -59,7 +59,7 @@ const UpdateUser = () => {
 
 
     return (
-        <div className="bg-gray-100 pb-32">
+        <div className=" pb-32">
 
             <Helmet>
                 <title>BISTRO BOSS | DASHBOARD | USER HOME | UPDATE USER</title>
@@ -70,7 +70,7 @@ const UpdateUser = () => {
             heading={'profile'}>
             </SectionTitle>
 
-            <div className="bg-blue-100 p-12 mx-32">
+            <div className="bg-gray-100 shadow-lg p-12 mx-32">
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -84,7 +84,7 @@ const UpdateUser = () => {
                             <input 
                             {...register('name')}
                             defaultValue={user?.displayName}
-                            type="text" name="name"  className="input input-bordered w-full" />
+                            type="text" name="name"  className="input input-bordered w-full rounded-sm border-none" />
                     </label>
 
                     {/* user email */}
@@ -94,7 +94,7 @@ const UpdateUser = () => {
                         </div>
                             <input 
                             {...register('email')}
-                            type="email" name="email" value={user?.email} className="input input-bordered w-full" />
+                            type="email" name="email" value={user?.email} className="input input-bordered w-full rounded-sm border-none" />
                     </label>
 
                 </div>
@@ -108,7 +108,7 @@ const UpdateUser = () => {
                         </div>
                             <input 
                             {...register('phoneNumber', { required: true })}
-                            type="number" name="phoneNumber" placeholder="Enter Phone Number" className="input input-bordered w-full" />
+                            type="number" name="phoneNumber" placeholder="Enter Phone Number" className="input input-bordered w-full rounded-sm border-none" />
                             {errors.name && <span className="text-red-600">Phone Number is required</span>}
                     </label>
 
@@ -120,7 +120,7 @@ const UpdateUser = () => {
                         <textarea 
                             {...register('contact', { required: true })}
                             name="contact"
-                            className="textarea textarea-bordered h-24" placeholder="Enter Contact Details"></textarea>
+                            className="textarea textarea-bordered h-24 rounded-sm border-none" placeholder="Enter Contact Details"></textarea>
                             {errors.name && <span className="text-red-600">Contact Details is required</span>}
                     </label>
 
@@ -129,13 +129,13 @@ const UpdateUser = () => {
                 <div className="form-control w-full my-6">
                 <input 
                 {...register('image', { required: true })}
-                type="file" className="file-input w-full max-w-xs" />
+                type="file" className="file-input w-full max-w-xs rounded-sm" />
                 {errors.name && <span className="text-red-600">Image is required</span>}
             </div>
 
             <button 
             style={{'background': 'linear-gradient(90.00deg, rgb(131, 93, 35),rgb(181, 129, 48) 100%)'}}
-            className="btn text-xl font-semibold text-white">
+            className="btn text-lg rounded-sm font-semibold text-white">
                 Update Profile <GrUpdate className="ml-4"></GrUpdate>
             </button>
 

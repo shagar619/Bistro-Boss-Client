@@ -45,27 +45,27 @@ const Navbar = () => {
     className={({ isActive }) => `font-bold ${isActive? 'text-warning': 'hover:text-warning transition hover:scale-110'}`}
     to="/order/salad">ORDER FOOD</NavLink>
 
-    {
-            // user ? 'true': 'false'
-            // user ? condition ? 'double true' : 'one true' : 'false' 
-        }
+
         {
-            user && isAdmin && <li><Link 
+            user && isAdmin && <li className="hover:text-warning text-lg font-medium transition hover:scale-105 uppercase"><Link 
             to="/dashboard/adminHome">Dashboard</Link></li>
         }
         {
-            user && !isAdmin && <li><Link
+            user && !isAdmin && <li className="hover:text-warning text-lg font-medium transition hover:scale-105 uppercase"><Link
             to="/dashboard/userHome">Dashboard</Link></li>
         }
 
-<Link to="/dashboard/cart">
+        {
+            user && 
+            <Link to="/dashboard/cart">
 
-<button className="btn">
-<FaCartShopping className="text-green-600 h-6 w-6"></FaCartShopping>
-    <div className="badge badge-secondary">{cart.length}</div>
-</button>
+                <button className="btn">
+                <FaCartShopping className="text-green-600 h-6 w-6"></FaCartShopping>
+                <div className="badge badge-secondary">{cart.length}</div>
+                </button>
 
-</Link>
+            </Link>
+        }
     
     </>
 
@@ -106,15 +106,15 @@ const Navbar = () => {
 {
     user ? 
     <div className="flex items-center gap-6 ">
-        <h3 className="text-xl hover:text-slate-800 font-medium">{user.email}</h3>
+        <h3 className="text-xl hover:text-warning font-medium transition hover:scale-105">{user.email}</h3>
         <button 
         onClick={handleLogOut}
-        className="btn bg-slate-700 text-lg border-none text-white">Sign Out</button>
+        className="btn bg-orange-500 text-lg rounded-sm border-none text-black">Sign Out</button>
     </div>
     : 
     <>
     <Link className="underline text-xl font-semibold hover:text-warning transition hover:scale-110" to="/signup">Register</Link>
-    <Link to="/login"><button className="btn text-lg bg-slate-700 text-white border-none">Sign In</button></Link>
+    <Link to="/login"><button className="btn bg-orange-500 text-lg rounded-sm border-none text-black">Sign In</button></Link>
     </>
 }
 </div>

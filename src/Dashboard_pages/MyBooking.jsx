@@ -32,7 +32,7 @@ const MyBooking = () => {
             subHeading={'---Excellent Ambience---'}>
             </SectionTitle>
 
-        <div className="bg-white p-12 mx-36">
+        <div className="bg-white shadow-lg p-12 mx-36">
 
         <div className="flex flex-col justify-between items-center mb-8">
 

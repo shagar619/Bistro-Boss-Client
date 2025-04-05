@@ -53,7 +53,7 @@ const ManageItems = () => {
 
 
 
-    <div className="bg-white p-12 mx-36">
+    <div className="bg-white shadow-lg p-12 mx-36">
 
 
 

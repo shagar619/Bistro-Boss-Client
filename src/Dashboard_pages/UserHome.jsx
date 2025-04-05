@@ -98,7 +98,7 @@ const UserHome = () => {
 
 <p className="text-center mt-12"><Link to="/dashboard/updateUser"><button 
 style={{'background': 'linear-gradient(90.00deg, rgb(131, 93, 35),rgb(181, 129, 48) 100%)'}}
-className="btn text-white text-xl font-semibold uppercase">Update Profile</button></Link></p>
+className="btn text-white text-xl font-semibold uppercase rounded-sm">Update Profile</button></Link></p>
 
 </div>
 

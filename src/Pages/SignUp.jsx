@@ -79,7 +79,7 @@ const SignUp = () => {
                         </div>
                         <input 
                         {...register("name", { required: true })}
-                        type="text" name="name" placeholder="Enter Your Name" className="input input-bordered w-full" />
+                        type="text" name="name" placeholder="Enter Your Name" className="input input-bordered w-full rounded-sm border-none" />
                         {errors.name && <span className="text-red-600">Name is required</span>}
                     </label>   
 
@@ -89,7 +89,7 @@ const SignUp = () => {
                         <div className="label">
                            <span className="label-text text-lg font-normal">E-mail *</span>
                         </div>
-                        <input type="email" name="email" placeholder="Enter Your E-mail" className="input input-bordered w-full" />
+                        <input type="email" name="email" placeholder="Enter Your E-mail" className="input input-bordered w-full rounded-sm border-none" />
                         {errors.email && <span className="text-red-600">Email is required</span>}
                     </label>
 
@@ -105,7 +105,7 @@ const SignUp = () => {
                                 maxLength: 20,
                                 pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                             })}
-                        type="password" name="password" placeholder="Enter Your Password" className="input input-bordered w-full" />
+                        type="password" name="password" placeholder="Enter Your Password" className="input input-bordered w-full rounded-sm border-none" />
 
                         {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
@@ -116,11 +116,11 @@ const SignUp = () => {
 
 
                     <input 
-                    className="bg-[#d1a054b3] btn text-xl font-bold text-white w-full py-2 mt-6 rounded cursor-pointer" type="submit" value="Sign Up" />
+                    className="bg-[#d1a054b3] btn text-xl font-bold text-white w-full py-2 mt-6 cursor-pointer rounded-sm" type="submit" value="Sign Up" />
 
                     </form>
 
-                    <p className="text-xl font-bold text-[#D1A054] text-center my-5">Already have an account? <Link className="underline text-lg font-bold" to="/login"><span className="hover:text-orange-400">Sign In</span></Link></p>
+                    <p className="text-xl font-bold text-[#D1A054] text-center my-5">Already have an account? <Link className="underline text-lg font-bold" to="/login"><span className="transition hover:scale-105 hover:text-orange-400">Sign In</span></Link></p>
 
                     <h3 className="text-center text-xl font-bold underline hover:text-[#D1A054]">Or Sign Up with</h3>
                     

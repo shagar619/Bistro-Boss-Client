@@ -53,7 +53,7 @@ const AddReview = () => {
             heading={'GIVE A REVIEW...'}>
             </SectionTitle>
 
-            <div className="bg-gray-100 mx-12 md:mx-24 mb-24">
+            <div className="bg-gray-100 shadow-lg mx-12 md:mx-24 mb-44">
 
             <form onSubmit={handleSubmit(onSubmit)}
             className="w-10/12 mx-auto pb-12 pt-16">
@@ -79,7 +79,7 @@ const AddReview = () => {
                 </div>
                     <input 
                     {...register('recipe', { required: true })}
-                    type="text" name="recipe" placeholder="Recipe you liked most" className="input input-bordered w-full" />
+                    type="text" name="recipe" placeholder="Recipe you liked most" className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Recipe is required</span>}
             </label>
 
@@ -90,7 +90,7 @@ const AddReview = () => {
                 </div>
                     <input 
                     {...register('suggestion', { required: true })}
-                    type="text" name="suggestion" placeholder="Suggestion" className="input input-bordered w-full" />
+                    type="text" name="suggestion" placeholder="Suggestion" className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Suggestion is required</span>}
             </label>
 
@@ -106,11 +106,11 @@ const AddReview = () => {
                     <textarea 
                     {...register('comments', { required: true })}
                     name="comments"
-                    className="textarea textarea-bordered h-32 text-lg" placeholder="Share Your Experience....."></textarea>
+                    className="textarea textarea-bordered h-32 text-lg rounded-sm border-none" placeholder="Share Your Experience....."></textarea>
                     {errors.name && <span className="text-red-600">Contact Details is required</span>}
                 </label>
 
-                <p className="text-center my-12"><button className="btn bg-orange-500 text-white text-lg font-bold uppercase">Submit Review</button></p>
+                <p className="text-center my-12"><button className="btn bg-orange-400 text-white text-lg font-bold uppercase rounded-sm">Submit Review</button></p>
 
             </form>
 

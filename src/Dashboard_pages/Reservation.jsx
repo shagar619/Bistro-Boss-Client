@@ -47,7 +47,7 @@ const Reservation = () => {
             heading={'BOOK A TABLE'}>
         </SectionTitle>
 
-        <div className="bg-[#F3F3F3] p-12 mx-32">
+        <div className="bg-[#F3F3F3] shadow-lg p-12 mx-32 mb-44">
 
         <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -61,7 +61,7 @@ const Reservation = () => {
                 </div>
                     <input 
                     {...register('date', { required: true })}
-                    type="date" name="date"  className="input input-bordered w-full" />
+                    type="date" name="date"  className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Date is required</span>}
             </label>
             
@@ -72,7 +72,7 @@ const Reservation = () => {
                 </div>
                     <input 
                     {...register('time', { required: true })}
-                    type="time" name="time"  className="input input-bordered w-full" />
+                    type="time" name="time"  className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Time is required</span>}
             </label>
 
@@ -84,7 +84,7 @@ const Reservation = () => {
                 </div>
                 <select 
                 {...register('guest', { required: true })}
-                    name="guest" required className="select text-base font-normal text-gray-500 select-bordered w-full">
+                    name="guest" required className="select text-base font-normal text-gray-500 select-bordered w-full rounded-sm border-none">
                     <option>1 Person</option>
                     <option>2 Persons</option>
                     <option>3 Persons</option>
@@ -102,7 +102,7 @@ const Reservation = () => {
                 </div>
                     <input 
                     {...register('name', { required: true })}
-                    type="text" name="name"  className="input input-bordered w-full" />
+                    type="text" name="name"  className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Name is required</span>}
             </label>
 
@@ -113,19 +113,19 @@ const Reservation = () => {
                 </div>
                     <input 
                     {...register('phone', { required: true })}
-                    type="number" name="phone"  className="input input-bordered w-full" />
+                    type="number" name="phone"  className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">Phone Number is required</span>}
             </label>
 
         {/* E-mail */}
-            <label className="form-control w-full">
+            <label className="form-control w-full rounded-sm border-none">
                 <div className="label">
                     <span className="label-text text-lg font-normal">E-mail *</span>
                 </div>
                     <input 
                     value={participant.email}
                     {...register('email', { required: true })}
-                    type="email" name="email"  className="input input-bordered w-full" />
+                    type="email" name="email"  className="input input-bordered w-full rounded-sm border-none" />
                     {errors.name && <span className="text-red-600">E-mail is required</span>}
             </label>
 
@@ -135,7 +135,7 @@ const Reservation = () => {
         <p className="text-center">
         <button
         style={{background: 'linear-gradient(90.00deg, rgb(131, 93, 35),rgb(181, 129, 48) 100%)'}}
-        className="btn text-xl font-semibold text-white">
+        className="btn text-xl font-semibold text-white rounded-sm">
             PAY
         </button>
         </p>

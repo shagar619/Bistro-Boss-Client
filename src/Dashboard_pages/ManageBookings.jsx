@@ -60,7 +60,7 @@ const ManageBookings = () => {
             heading={"MANAGE ALL BOOKINGS"}>
             </SectionTitle>
 
-        <div className="bg-white p-12 mx-12">
+        <div className="bg-white shadow-lg p-12 mx-16">
             
             <h2 className="text-[#151515] text-[32px] font-bold mb-8">Total Bookings : {payments.length}</h2>
             

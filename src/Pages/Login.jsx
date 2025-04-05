@@ -25,21 +25,6 @@ const Login = () => {
     } , [])
 
 
-    // const handleSignInWithGoogle = () => {
-    //     signInWithGoogle()
-    //     .then(result => {
-    //         Swal.fire({
-    //             icon: "success",
-    //             title: "Congratulation!",
-    //             text: "Successfully Login With Google",
-    //         });
-    //         navigate(from, { replace: true });
-    //     })
-    //     .catch(error => {
-    //         console.log(error.message);
-    //     })
-    // }
-
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -101,14 +86,14 @@ const Login = () => {
                         <div className="label">
                            <span className="label-text text-lg font-normal">E-mail *</span>
                         </div>
-                        <input type="email" name="email" placeholder="Enter Your E-mail" className="input input-bordered w-full" />
+                        <input type="email" name="email" placeholder="Enter Your E-mail" className="input input-bordered w-full rounded-sm border-none" />
                     </label>
 
                     <label className="form-control w-full">
                         <div className="label">
                            <span className="label-text text-lg font-normal">Password *</span>
                         </div>
-                        <input type="password" name="password" placeholder="Enter Your Password" className="input input-bordered w-full" />
+                        <input type="password" name="password" placeholder="Enter Your Password" className="input input-bordered w-full rounded-sm border-none" />
                     </label>
 
 
@@ -120,13 +105,13 @@ const Login = () => {
                         </div>
                         <input 
                         onBlur={handleValidateCaptcha}
-                        type="" name="captcha" placeholder="Type the captcha above" className="input input-bordered w-full" />
+                        type="" name="captcha" placeholder="Type the captcha above" className="input input-bordered w-full rounded-sm border-none" />
                     </label>
 
 
                     <input 
                     disabled={disabled}
-                    className="bg-[#d1a054b3] btn text-xl font-bold text-white w-full py-2 mt-6 rounded cursor-pointer" type="submit" value="Login" />
+                    className="bg-[#d1a054b3] btn text-xl font-bold text-white w-full py-2 mt-6 rounded-sm cursor-pointer" type="submit" value="Login" />
 
                     </form>
 

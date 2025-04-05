@@ -57,7 +57,7 @@ const Cart = () => {
 
 
 
-    <div className="bg-white p-12 mx-36">
+    <div className="bg-white shadow-lg p-12 mx-36">
 
 
     <div className="flex justify-evenly items-center mb-8">
@@ -66,10 +66,10 @@ const Cart = () => {
             <h1 className="text-[#151515] text-[32px] font-bold uppercase">Total Price : $ {totalPrice}</h1>
 
         { cart.length ? <Link to="/dashboard/reservation">
-            <button className="btn bg-[#D1A054] text-white text-xl font-semibold">Booking</button>
+            <button className="btn bg-[#D1A054] text-white text-xl font-semibold rounded-sm">Booking</button>
         </Link> 
         :
-        <button disabled className="btn bg-[#D1A054] text-white text-xl font-semibold">Booking</button>
+        <button disabled className="btn bg-[#D1A054] text-white text-xl font-semibold rounded-sm">Booking</button>
         }
 
     </div>

@@ -42,7 +42,7 @@ const GoogleLogin = () => {
         <div>
             <button 
                 onClick={handleSignInWithGoogle}
-                className="flex justify-center btn text-white items-center gap-4 border-none bg-[#D1A054] w-full py-2 font-bold text-xl rounded-md mt-8 hover:text-blue-600"><FaGoogle className="text-blue-600"></FaGoogle>Sign Up With Google</button>
+                className="flex justify-center btn text-white items-center gap-4 border-none bg-[#D1A054] w-full py-2 font-bold text-xl rounded-sm mt-8 hover:text-blue-600"><FaGoogle className="text-blue-600"></FaGoogle>Sign Up With Google</button>
         </div>
     );
 };
