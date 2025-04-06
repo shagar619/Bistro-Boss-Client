@@ -8,8 +8,8 @@ const OrderTabpanel = ({ items }) => {
                     items.map(item => 
                         <FoodCard
                         key={item._id}
-                        item={item}
-                        ></FoodCard>
+                        item={item}>
+                        </FoodCard>
                     )
                 }
         </div>

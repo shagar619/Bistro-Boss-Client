@@ -38,8 +38,8 @@ const Menu = () => {
 
             <SectionTitle
             subHeading={"---Don't miss---"}
-            heading={"TODAY'S OFFER"}
-            ></SectionTitle>
+            heading={"TODAY'S OFFER"}>
+            </SectionTitle>
 
             {/* offered menu items */}
 
@@ -51,8 +51,8 @@ const Menu = () => {
             coverImg={desertImg}
             items={deserts}
             title={"Deserts"}
-            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
-            ></MenuCategories>
+            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}>
+            </MenuCategories>
 
             {/* pizza menu items */}
 
@@ -60,8 +60,8 @@ const Menu = () => {
             coverImg={pizzaImg}
             items={pizza}
             title={"Pizza"}
-            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
-            ></MenuCategories>
+            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}>
+            </MenuCategories>
 
             {/* salad menu items */}
 
@@ -69,8 +69,8 @@ const Menu = () => {
             coverImg={saladImg}
             items={salad}
             title={"Salad"}
-            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
-            ></MenuCategories>
+            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}>
+            </MenuCategories>
 
             {/* soups menu items */}
 
@@ -78,8 +78,8 @@ const Menu = () => {
             coverImg={soupImg}
             items={soup}
             title={"Soups"}
-            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
-            ></MenuCategories>
+            subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}>
+            </MenuCategories>
 
         </div>
     );

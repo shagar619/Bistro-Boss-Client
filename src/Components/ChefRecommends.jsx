@@ -17,14 +17,14 @@ const ChefRecommends = () => {
     } , [])
 
     return (
-        <div className="mb-32">
+        <div className="w-10/12 mx-auto mb-32">
 
             <SectionTitle
             subHeading={"---Should Try---"}
             heading={"CHEF RECOMMENDS"}>
             </SectionTitle>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {
                     recommend.map(item => <RecommendItem 
                         key={item._id}

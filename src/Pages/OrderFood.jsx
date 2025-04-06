@@ -52,32 +52,32 @@ const OrderFood = () => {
                 </TabList>
             <TabPanel>
                 <OrderTabpanel
-                items={salad}
-                ></OrderTabpanel>
+                items={salad}>
+                </OrderTabpanel>
             </TabPanel>
 
             <TabPanel>
                 <OrderTabpanel
-                items={pizza}
-                ></OrderTabpanel>
+                items={pizza}>
+                </OrderTabpanel>
             </TabPanel>
 
             <TabPanel>
                 <OrderTabpanel
-                items={soup}
-                ></OrderTabpanel>
+                items={soup}>
+                </OrderTabpanel>
             </TabPanel>
 
             <TabPanel>
                 <OrderTabpanel
-                items={deserts}
-                ></OrderTabpanel>
+                items={deserts}>
+                </OrderTabpanel>
             </TabPanel>
 
             <TabPanel>
                 <OrderTabpanel
-                items={drinks}
-                ></OrderTabpanel>
+                items={drinks}>
+                </OrderTabpanel>
             </TabPanel>
 
             </Tabs>

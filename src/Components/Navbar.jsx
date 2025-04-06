@@ -93,7 +93,7 @@ const Navbar = () => {
         {links}
     </ul>
     </div>
-    <h3 className="text-3xl font-bold hover:text-warning transition hover:scale-110">BISTRO BOSS <br /> RESTAURANT</h3>
+    <h3 className="text-3xl text-warning font-bold hover:text-orange-500 transition hover:scale-110">BISTRO BOSS <br /> RESTAURANT</h3>
 </div>
 <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal flex items-center px-1 space-x-8 text-lg font-bold">
